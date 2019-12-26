@@ -1,5 +1,5 @@
 # Install-Nginx-on-Centos7
-## Step 1 install the prerequisites
+## Step 1 Install the prerequisites
 ```
 # sudo yum -y install yum-utils
 ```
@@ -25,8 +25,24 @@ moudle_hotfixes=true
 ```
 # sudo yum-config-manager --enable nginx-mainline
 ```
-## Step 4 install nginx，run the following command:
+## Step 4 Install nginx，run the following command:
 ```
 # sudo yum -y install nginx
 ```
 When promoted to accept the GPG key，verify that the fingerprint maches 573B FD6B 3D8F BC64 1079 A6AB ABF5 BD82 7BD9 BF62，and if so，accept it.
+## Step 5 Manage nginx http server on CentOS7
+```
+# sudo systemctl start nginx
+# sudo systemctl enable nginx
+# sudo systemctl status nginx
+```
+## Step 6 Configure firewalld to allow nginx traffic
+```
+# sudo firewall-cmd --zone=public --permanent --add-service=http
+# sudo firewall-cmd --zone=public --permanent --add-service=https
+# sudo firewall-cmd --reload
+```
+## Step 7 Test nginx server on centos7
+```
+http://SERVER_DOMAIN_NAME_OR_IP 
+```
