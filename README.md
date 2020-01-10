@@ -46,3 +46,7 @@ When promoted to accept the GPG key，verify that the fingerprint maches 573B FD
 ```
 http://SERVER_DOMAIN_NAME_OR_IP 
 ```
+## Step 8 Modify website
+```
+/usr/share/nginx/html
+```
